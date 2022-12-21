@@ -12,6 +12,7 @@ const app = new Vue({
         setTimeout(function() {
           document.querySelector('.thank-you').classList.toggle('hidden');
           document.querySelector('.thank-you').setAttribute('aria-hidden', 'false');
+          document.querySelector('form').style.zIndex = "-2";
         }, 1000);
       }
     }
