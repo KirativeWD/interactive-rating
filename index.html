@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+  <script src="resources/js/index.js" defer></script>
+  <link rel="stylesheet" href="resources/css/styles.css">
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+<body>
+
+  <main>
+    <article id="app" class="cta">
+      <form class="my-form" v-on:submit.prevent="submitForm" aria-hidden="false">
+
+        <img src="resources/images/icon-star.svg" alt="A single star" class="circle">
+
+        <h2 class="em-title">How did we do?</h2>
+
+        <p>Please let us know how we did with your support request. All feedback is appreciated 
+          to help us improve our offering!</p>
+
+        <div class="input-cta">
+          <input type="radio" id="1" name="rating" value="1" v-model="rating">
+          <label for="1" class="circle">
+            <span class="align">1</span>
+          </label>
+          <input type="radio" id="2" name="rating" value="2" v-model="rating">
+          <label for="2" class="circle">
+            <span class="align">2</span>
+          </label>
+          <input type="radio" id="3" name="rating" value="3" v-model="rating">
+          <label for="3" class="circle">
+            <span class="align">3</span>
+          </label>
+          <input type="radio" id="4" name="rating" value="4" v-model="rating">
+          <label for="4" class="circle">
+            <span class="align">4</span>
+          </label>
+          <input type="radio" id="5" name="rating" value="5" v-model="rating">
+          <label for="5" class="circle">
+            <span class="align">5</span>
+          </label>
+        </div>
+        
+        <button class="btn"><span class="align">SUBMIT</span></button>
+      </form>
+
+      <section class="thank-you hidden" aria-hidden="true">
+        <img src="resources/images/illustration-thank-you.svg" alt="">
+        <p class="final-rating">
+          <span class="align">You selected {{ rating }} out of 5</span>
+        </p>
+        <h2 class="em-title">Thank you!</h2>
+        <p class="absolute-txt">We appreciate you taking the time to give a rating. If you ever need more support, 
+          don’t hesitate to get in touch!</p>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/KirativeWD" target="_blank">KirativeWD</a>.</p>
+  </footer>
+
+</body>
+</html>
