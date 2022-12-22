@@ -88,14 +88,15 @@ body {
     margin: 1rem;
 }
 
-main {
-    max-width: 390px;
+.prime-cta {
+    background: var(--clr-darkblue-500);
+    padding: 1rem 0;
+    border-radius: 1rem;
 }
 
 .cta {
-    background: var(--clr-darkblue-500);
     padding: 1.75rem 1.25rem 2rem;
-    border-radius: 1rem;
+    max-width: 400px;
 }
 
 .circle {
@@ -116,13 +117,28 @@ main {
     top: 2px;
 }
 
+.sr-only {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
 /* ====================[4]==================== */
 /* ===== FORM ===== */
 
-form {
+.form-cta {
     display: grid;
-    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -46%);
     z-index: 2;
+    padding: 0;
+    width: 80%;
 }
 
 .em-title {
@@ -134,14 +150,14 @@ form {
 
 /* RATING SELECTIONS */
 
+form {
+    display: grid;
+}
+
 .input-cta {
     margin: 1.75rem 0;
     display: flex;
     justify-content: space-between;
-}
-
-input {
-    display: none;
 }
 
 input:checked+label.circle {
@@ -191,10 +207,6 @@ label.circle:hover {
     display: flex;
     flex-direction: column;
     transition: opacity 1000ms linear;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -55%);
 }
 
 .final-rating {
@@ -202,13 +214,8 @@ label.circle:hover {
     color: var(--clr-orange);
     background: var(--clr-greyblue-200-op);
     width: fit-content;
-    padding: 0.25rem 0.75rem;
+    padding: 0.25rem 1rem;
     border-radius: 1rem;
-}
-
-p.absolute-txt {
-    width: 160%;
-    max-width: 35.5ch;
 }
 
 /* ====================[6]==================== */
@@ -216,7 +223,12 @@ p.absolute-txt {
 
 .attribution {
     text-align: center;
-    margin-top: 2rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
 }
 
 .attribution a {
@@ -231,15 +243,22 @@ p.absolute-txt {
 /* ===== MEDIA QUERIES ===== */
 
 @media (min-width: 420px) {
+
+    .prime-cta {
+        border-radius: 2rem;
+    }
+
     .cta {
         padding: 1.75rem 2rem 2rem;
-        border-radius: 2rem;
+    }
+
+    .form-cta {
+        width: 100%;
     }
 
     .em-title {
         margin: 1.5rem 0 0.5rem;
     }
-
 
     .final-rating {
         margin: 2rem 0 0.5rem;
@@ -250,10 +269,3 @@ p.absolute-txt {
     }
     
 }
-
-
-/* ====================[8]==================== */
-
-/* ====================[9]==================== */
-
-/* ====================[10]==================== */

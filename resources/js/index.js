@@ -5,14 +5,16 @@ const app = new Vue({
     },
     methods: {
       submitForm: function() {
-        document.querySelector('form').classList.toggle('hidden');
-        document.querySelector('form').setAttribute('aria-hidden', 'true');
-        document.querySelector('.input-cta').setAttribute('tabindex', '-1');
-        document.querySelector('.btn').setAttribute('tabindex', '-1');
+        document.querySelector('button').style.display = 'none';
         setTimeout(function() {
-          document.querySelector('.thank-you').classList.toggle('hidden');
-          document.querySelector('.thank-you').setAttribute('aria-hidden', 'false');
-        }, 1000);
+          document.querySelector('.form-cta').classList.toggle('hidden');
+          document.querySelector('.form-cta').setAttribute('aria-hidden', 'true');
+          setTimeout(function() {
+            document.querySelector('.form-cta').style.display = 'none';
+            document.querySelector('.thank-you').classList.toggle('hidden');
+            document.querySelector('.thank-you').setAttribute('aria-hidden', 'false');
+          }, 1000)
+        }, 500);
       }
     }
   });
